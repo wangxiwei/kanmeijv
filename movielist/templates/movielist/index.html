@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'movielist/style.css' %}" />
+{% if movie_list %}
+<tr>
+
+        {% for movie in movie_list %}
+        <tr bgcolor="#ffffff" align="center">
+            <td><a href="{{ movie.movie_url }}">{{ movie.movie_name }}</a></td>
+            <td>{{ movie.movie_state }}</td>
+        </tr><br>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No movies</p>
+{% endif %}
