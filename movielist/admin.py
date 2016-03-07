@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie
+from .models import Movie,HDTV
 
 
 class MovieAdmin(admin.ModelAdmin):
@@ -8,3 +8,9 @@ class MovieAdmin(admin.ModelAdmin):
     search_fields = ['movie_name']
 
 admin.site.register(Movie,MovieAdmin)
+
+
+class HDTVAdmin(admin.ModelAdmin):
+    list_display = ('tv_name','tv_size')
+
+admin.site.register(HDTV,HDTVAdmin)

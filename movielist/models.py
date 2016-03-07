@@ -14,3 +14,15 @@ class Movie(models.Model):
 
     def __unicode__(self):
         return self.movie_name
+
+
+class HDTV(models.Model):
+    tv_name = models.CharField(max_length=500)
+    tv_url = models.CharField(max_length=1000)
+    tv_download = models.CharField(max_length=2000)
+    tv_size = models.CharField(max_length=50)
+    tv_format = models.CharField(max_length=50)
+    tv_sub = models.CharField(max_length=2000)
+
+    def __unicode__(self):
+        return self.tv_name
