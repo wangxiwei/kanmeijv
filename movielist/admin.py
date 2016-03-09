@@ -11,6 +11,7 @@ admin.site.register(Movie,MovieAdmin)
 
 
 class HDTVAdmin(admin.ModelAdmin):
-    list_display = ('tv_name','tv_size')
+    list_display = ('tv_name','tv_size','tv_format')
+    search_fields = ['tv_name']
 
 admin.site.register(HDTV,HDTVAdmin)
