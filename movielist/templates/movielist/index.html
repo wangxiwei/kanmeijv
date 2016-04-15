@@ -1,6 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+{% load movielist_filter %}
+
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -24,6 +27,13 @@
         })();
 
 
+    </script>
+    <script>
+        function myFunction(url)
+        {
+            $.post()
+            alert(url);
+        }
 
     </script>
     <!-- 请置于所有广告位代码之前 -->
@@ -56,8 +66,6 @@
                             <script>
                                 window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","sqq","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","sqq","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 
-
-
                             </script>
                         </td>
                     </tr>
@@ -72,7 +80,7 @@
                     {% for movie in movie_list %}
                     <tr bgcolor="#ffffff" align="center">
                         <td>{{ movie.id }}</td>
-                        <td align="left"><a href="{{ movie.movie_url }}"target="_blank">{{ movie.movie_name }}</a></td>
+                        <td align="left"><a href="{{ movie.movie_url }}" target="_blank" onclick="myFunction('{{ movie.movie_url }}')">{{movie.movie_name}}</a></td>
                         <td>{{ movie.movie_state }}</td>
                         <td bgcolor="#ffffff" align="left">{{ movie.movie_update }}</td>
                         <td>{{movie.movie_return}}</td>
