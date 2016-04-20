@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie,HDTV
+from .models import Movie,HDTV,URLClicked
 
 
 class MovieAdmin(admin.ModelAdmin):
@@ -15,3 +15,11 @@ class HDTVAdmin(admin.ModelAdmin):
     search_fields = ['tv_name']
 
 admin.site.register(HDTV,HDTVAdmin)
+
+
+class URLClickedAdmin(admin.ModelAdmin):
+    list_display = ('movie_clicked','url_clicked','url_current','click_time')
+    search_fields = ['movie_clicked']
+    list_filter = ['click_time']
+
+admin.site.register(URLClicked,URLClickedAdmin)
