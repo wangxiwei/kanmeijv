@@ -26,3 +26,13 @@ class HDTV(models.Model):
 
     def __unicode__(self):
         return self.tv_name
+
+
+class URLClicked(models.Model):
+    movie_clicked = models.CharField(max_length=100)
+    url_clicked = models.CharField(max_length=1000)
+    url_current = models.CharField(max_length=1000)
+    click_time = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.movie_clicked
