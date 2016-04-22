@@ -32,7 +32,8 @@ class URLClicked(models.Model):
     movie_clicked = models.CharField(max_length=100)
     url_clicked = models.CharField(max_length=1000)
     url_current = models.CharField(max_length=1000)
-    click_time = models.CharField(max_length=100)
+    click_date = models.CharField(max_length=100)
+    click_time = models.CharField(max_length=100,null=True)
 
     def __unicode__(self):
         return self.movie_clicked

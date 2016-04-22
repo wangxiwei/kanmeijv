@@ -18,8 +18,8 @@ admin.site.register(HDTV,HDTVAdmin)
 
 
 class URLClickedAdmin(admin.ModelAdmin):
-    list_display = ('movie_clicked','url_clicked','url_current','click_time')
+    list_display = ('movie_clicked','url_clicked','url_current','click_date')
     search_fields = ['movie_clicked']
-    list_filter = ['click_time']
+    list_filter = ['click_date']
 
 admin.site.register(URLClicked,URLClickedAdmin)
